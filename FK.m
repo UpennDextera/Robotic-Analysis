@@ -24,8 +24,8 @@ T3 = [cos(q(2)+pi/2)   0  sin(q(2)+pi/2)  0;
             0          0       0          1];
 
 %Frame 4 w.r.t Frame 3
-T4 = [cos(q(3)+pi/2)  -sin(q(3)+pi/2)  0  lg*cos(q(3)+pi/2);
-      sin(q(3)+pi/2)   cos(q(3)+pi/2)  0  lg*sin(q(3)+pi/2);
+T4 = [cos(q(3)+pi/2)  -sin(q(3)+pi/2)  0  -lg*cos(q(3)+pi/2);
+      sin(q(3)+pi/2)   cos(q(3)+pi/2)  0  -lg*sin(q(3)+pi/2);
          0                  0          1           0;
          0                  0          0           1];
   
@@ -49,5 +49,5 @@ jointPositions = X(:,1:3);
 
 T0e = T1*T2*T3*T4;
 
-end
+end 
 

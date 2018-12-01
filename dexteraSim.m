@@ -28,14 +28,14 @@ if(arm.firstFrame) %We need to create the plots
     arm.links = line(jointPositions(:,1),jointPositions(:,2),jointPositions(:,3),'color',[0.2,0.2,0.2],'LineWidth',linkWidth);
     hold on;
     
-    arm.shadow = line(jointPositions(:,1),jointPositions(:,2),zeros(size(jointPositions,1),1),'color',[0.5,0.5,0.5],'LineWidth',shadowWidth);
+%     arm.shadow = line(jointPositions(:,1),jointPositions(:,2),zeros(size(jointPositions,1),1),'color',[0.5,0.5,0.5],'LineWidth',shadowWidth);
     
     arm.frameOrigins = scatter3(jointPositions(:,1),jointPositions(:,2),jointPositions(:,3),jointSize,'MarkerEdgeColor','none','MarkerFaceColor',[0,0,0]);
     
     EExAxis = T0e(1:3,1)';
     EEyAxis = T0e(1:3,2)';
     EEzAxis = T0e(1:3,3)';
-    EExAxis = frameSize*EExAxis;
+    EExAxis = -frameSize*EExAxis;
     EEyAxis = frameSize*EEyAxis;
     EEzAxis = frameSize*EEzAxis;
     arm.EEx = line([T0e(1,4),T0e(1,4)+EExAxis(1)],[T0e(2,4),T0e(2,4)+EExAxis(2)],[T0e(3,4),T0e(3,4)+EExAxis(3)],'Color','r','LineWidth',axisWidth);
