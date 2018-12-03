@@ -24,4 +24,4 @@ end
 q1 = o_z - d0 - lg*sin(q2+pi/2)*cos(q3+pi/2);
 
 q = [q1 q2 q3];
-end 
+end
