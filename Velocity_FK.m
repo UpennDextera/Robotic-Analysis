@@ -14,11 +14,11 @@ q3 = q(3);
 lg = 75;
 
 J(1,:) = [0, -lg*cos(q3 + pi/2)*sin(q2 + pi/2), -lg*cos(q2 + pi/2)*sin(q3 + pi/2)];
-J(2,:) = [0, 0, lg*cos(q3 + pi/2)];
+J(2,:) = [0, 0, -lg*cos(q3 + pi/2)];
 J(3,:) = [1, lg*cos(q2 + pi/2)*cos(q3 + pi/2), -lg*sin(q2 + pi/2)*sin(q3 + pi/2)];
-J(4,:) = [0, sin(q2 + pi/2), sin(q2 + pi/2)];
-J(5,:) = [ -1, 0, 0];
-J(6,:) = [0, -cos(q2 + pi/2), -cos(q2 + pi/2)];
+J(4,:) = [0,  0, sin(q2 + pi/2)];
+J(5,:) = [0, -1, 0];
+J(6,:) = [0,  0, -cos(q2 + pi/2)];
 
 % full-body velocity  = Jacobian * qdot
 e_vel = J * transpose(qdot);

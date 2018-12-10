@@ -20,12 +20,12 @@ T2 = [1  0  0   0;
 %Frame 3 w.r.t Frame 2
 T3 = [cos(q(2)+pi/2)   0  sin(q(2)+pi/2)  0;
       sin(q(2)+pi/2)   0 -cos(q(2)+pi/2)  0;
-            0         -1       0          l;
+            0          1       0          l;
             0          0       0          1];
 
 %Frame 4 w.r.t Frame 3
-T4 = [cos(q(3)+pi/2)  -sin(q(3)+pi/2)  0  -lg*cos(q(3)+pi/2);
-      sin(q(3)+pi/2)   cos(q(3)+pi/2)  0  -lg*sin(q(3)+pi/2);
+T4 = [cos(q(3)+pi/2)  -sin(q(3)+pi/2)  0  lg*cos(q(3)+pi/2);
+      sin(q(3)+pi/2)   cos(q(3)+pi/2)  0  lg*sin(q(3)+pi/2);
          0                  0          1           0;
          0                  0          0           1];
 T01 = T1;

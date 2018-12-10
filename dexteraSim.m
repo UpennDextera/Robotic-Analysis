@@ -27,7 +27,7 @@ if(arm.firstFrame) %We need to create the plots
     
     axis equal vis3d
     xlim([-200 100]);
-    ylim([-300 100]);
+    ylim([-400 100]);
     zlim([-100 200]);
     
     arm.link1 = Cylinder(o0,o1,8,20,C,1,0);
@@ -51,26 +51,7 @@ if(arm.firstFrame) %We need to create the plots
     Y_cube = L*(Y_cube-0.5) + o1(2);
     Z_cube = L*(Z_cube-0.5) + o1(3);
     
-    arm.prismatic = patch(X_cube,Y_cube,Z_cube,C_joint); % draw prismatic joint
-    
-%     Lx = 10;
-%     Ly = lg;
-%     Lz = 5;
-%     
-%     X_grip = [0 0 0 0 0 1; 1 0 1 1 1 1; 1 0 1 1 1 1; 0 0 0 0 0 1];
-%     Y_grip = [0 0 0 0 1 0; 0 1 0 0 1 1; 0 1 1 1 1 1; 0 0 1 1 1 0];
-%     Z_grip = [0 0 1 0 0 0; 0 0 1 0 0 0; 1 1 1 0 1 1; 1 1 1 0 1 1];
-%     
-%     X_grip1 = Lx*(X_grip-0.5) + o4(1);
-%     Y_grip1 = Ly*(Y_grip-0.5) + o4(2) + (lg/2);
-%     Z_grip1 = Lz*(Z_grip-0.5) + o4(3) + 5;
-%     
-%     X_grip2 = Lx*(X_grip-0.5) + o4(1);
-%     Y_grip2 = Ly*(Y_grip-0.5) + o4(2) + (lg/2);
-%     Z_grip2 = Lz*(Z_grip-0.5) + o4(3) - 5;
-%     
-%     arm.grip1 = fill3(X_grip1,Y_grip1,Z_grip1,C); % draw gripper stand-in
-%     arm.grip2 = fill3(X_grip2,Y_grip2,Z_grip2,C); 
+    arm.prismatic = patch(X_cube,Y_cube,Z_cube,C_joint); % draw prismatic joint 
     
     EExAxis = T0e(1:3,1)';
     EEyAxis = T0e(1:3,2)';
@@ -117,26 +98,7 @@ else
     Y_cube = L*(Y_cube-0.5) + o1(2);
     Z_cube = L*(Z_cube-0.5) + o1(3);
     
-    arm.prismatic = patch(X_cube,Y_cube,Z_cube,C_joint); % draw prismatic joint
-    
-%     Lx = 10;
-%     Ly = lg;
-%     Lz = 5;
-%     
-%     X_grip = [0 0 0 0 0 1; 1 0 1 1 1 1; 1 0 1 1 1 1; 0 0 0 0 0 1];
-%     Y_grip = [0 0 0 0 1 0; 0 1 0 0 1 1; 0 1 1 1 1 1; 0 0 1 1 1 0];
-%     Z_grip = [0 0 1 0 0 0; 0 0 1 0 0 0; 1 1 1 0 1 1; 1 1 1 0 1 1];
-%     
-%     X_grip1 = Lx*(X_grip-0.5) + o4(1);
-%     Y_grip1 = Ly*(Y_grip-0.5) + o4(2) + (lg/2);
-%     Z_grip1 = Lz*(Z_grip-0.5) + o4(3) + 5;
-%     
-%     X_grip2 = Lx*(X_grip-0.5) + o4(1);
-%     Y_grip2 = Ly*(Y_grip-0.5) + o4(2) + (lg/2);
-%     Z_grip2 = Lz*(Z_grip-0.5) + o4(3) - 5;
-%     
-%     arm.grip1 = fill3(X_grip1,Y_grip1,Z_grip1,C); % draw gripper stand-in
-%     arm.grip2 = fill3(X_grip2,Y_grip2,Z_grip2,C); 
+    arm.prismatic = patch(X_cube,Y_cube,Z_cube,C_joint); % draw prismatic joint 
     
     l = light('Position',[0.4 0.4 0.9],'Style','infinite');
     lighting gouraud
@@ -150,7 +112,7 @@ else
     EExAxis = frameSize*EExAxis;
     EEyAxis = frameSize*EEyAxis;
     EEzAxis = frameSize*EEzAxis;
-    set(arm.EEx,'xdata',[T0e(1,4),T0e(1,4)-EExAxis(1)],'ydata',[T0e(2,4),T0e(2,4)-EExAxis(2)],'zdata',[T0e(3,4),T0e(3,4)-EExAxis(3)]);
+    set(arm.EEx,'xdata',[T0e(1,4),T0e(1,4)+EExAxis(1)],'ydata',[T0e(2,4),T0e(2,4)+EExAxis(2)],'zdata',[T0e(3,4),T0e(3,4)+EExAxis(3)]);
     set(arm.EEy,'xdata',[T0e(1,4),T0e(1,4)+EEyAxis(1)],'ydata',[T0e(2,4),T0e(2,4)+EEyAxis(2)],'zdata',[T0e(3,4),T0e(3,4)+EEyAxis(3)]);
     set(arm.EEz,'xdata',[T0e(1,4),T0e(1,4)+EEzAxis(1)],'ydata',[T0e(2,4),T0e(2,4)+EEzAxis(2)],'zdata',[T0e(3,4),T0e(3,4)+EEzAxis(3)]);
     
